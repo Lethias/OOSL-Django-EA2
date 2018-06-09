@@ -1,0 +1,6 @@
+django
+django-bootstrap3
+pip
+pytz
+
+

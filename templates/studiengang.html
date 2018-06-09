@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block title %}
+    {{ page_title }}
+{% endblock %}
+
+{% block content %}
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Fachbereich</th>
+        </tr>
+        {% for studiengang in studiengaenge %}
+            <tr>
+                <td>{{ studiengang.studiengangname }}</td>
+                <td>{{ studiengang.fachsemester }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="" class="btn btn-primary">Neuer Studiengang</a>
+{% endblock %}

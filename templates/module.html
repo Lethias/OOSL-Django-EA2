@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block title %}
+    {{ page_title }}
+{% endblock %}
+
+{% block content %}
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Lehrer</th>
+            <th>Semester</th>
+            <th>ECTS</th>
+        </tr>
+        {% for modul in module %}
+            <tr>
+                <td>{{ modul.modulname }}</td>
+                <td>{{ modul.teacher }}</td>
+                <td>{{ modul.semester }}</td>
+                <td>{{ modul.ects }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="" class="btn btn-primary">Neues Modul</a>
+{% endblock %}

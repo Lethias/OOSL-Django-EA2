@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block title %}
+    {{ page_title }}
+{% endblock %}
+
+{% block content %}
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>Nachname</th>
+            <th>Vorname</th>
+            <th>Email</th>
+            <th>Studiengang</th>
+            <th>Module</th>
+            <th>&nbsp;</th>
+        </tr>
+        {% for student in students %}
+            <tr>
+                <td>{{ student.lastname }}</td>
+                <td>{{ student.firstname }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.studiengang }}</td>
+                <td>{{ student.module.all|join:', ' }}</td>
+                <td><a href="{% url 'editStudent' pk=student.pk %}">{% bootstrap_icon 'edit' %}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'addStudent' %}" class="btn btn-primary">Neuer Student</a>
+{% endblock %}

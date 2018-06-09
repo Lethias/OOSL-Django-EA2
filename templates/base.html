@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <title>{% block title %} My App {% endblock %}</title>
+</head>
+<body>
+<ul class="nav nav-tabs">
+  <li role="presentation"><a href="{% url 'showStudent' %}">Studenten</a></li>
+  <li role="presentation"><a href="{% url 'showModul' %}">Module</a></li>
+  <li role="presentation"><a href="{% url 'showStudiengang' %}">Studiengänge</a></li>
+</ul>
+<h2>{{ page_title }}</h2>
+{% bootstrap_messages %}
+{% block content %}
+    Dynamic Content
+{% endblock %}
+</body>
+</html>
